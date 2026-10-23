@@ -1,0 +1,61 @@
+[package]
+name = "textinputsources-rs"
+version = "0.1.0"
+edition = "2021"
+license = "MIT OR Apache-2.0"
+homepage = "https://github.com/doom-fish/textinputsources-rs"
+repository = "https://github.com/doom-fish/textinputsources-rs"
+description = "Safe Rust bindings for macOS Text Input Sources and keyboard layout translation"
+authors = ["Per Johansson <per@doom.fish>"]
+keywords = ["macos", "keyboard", "carbon", "input-source", "apple"]
+categories = ["api-bindings", "os::macos-apis"]
+rust-version = "1.82"
+readme = "README.md"
+build = "build.rs"
+include = [
+    "src/**/*",
+    "examples/**/*",
+    "tests/**/*",
+    "swift-bridge/Package.swift",
+    "swift-bridge/Sources/**/*",
+    "build.rs",
+    "Cargo.toml",
+    "README.md",
+    "LICENSE-*",
+    "CHANGELOG.md",
+    "COVERAGE.md",
+]
+
+[lints.rust]
+
+[lints.clippy]
+pedantic = { level = "warn", priority = -1 }
+nursery = { level = "warn", priority = -1 }
+cargo = { level = "warn", priority = -1 }
+missing_errors_doc = "allow"
+missing_panics_doc = "allow"
+
+[lib]
+name = "textinputsources"
+crate-type = ["lib"]
+
+[dependencies]
+doom-fish-utils = { path = "../doom-fish-utils", version = ">=0.4.1, <0.5" }
+
+[dev-dependencies]
+foundation-rs = { path = "../foundation-rs", version = ">=0.1.1, <0.2" }
+
+[package.metadata.docs.rs]
+default-target = "aarch64-apple-darwin"
+targets = ["aarch64-apple-darwin", "x86_64-apple-darwin"]
+rustdoc-args = ["--cfg", "docsrs"]
+
+[badges]
+maintenance = { status = "actively-developed" }
+
+[[example]]
+name = "01_current_keyboard_layout"
+
+[profile.release]
+debug = "full"
+strip = "none"
