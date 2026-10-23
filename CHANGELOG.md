@@ -4,6 +4,8 @@ This file records the changes to `textinputsources-rs`.
 
 ## [Unreleased]
 
+## [0.1.0] - 2026-10-24
+
 ### Added
 
 - `InputSource` owns the selected keyboard layout, input source, or ASCII-capable layout.
