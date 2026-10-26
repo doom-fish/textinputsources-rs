@@ -4,6 +4,12 @@ This file records the changes to `textinputsources-rs`.
 
 ## [Unreleased]
 
+## [0.1.1] - 2026-10-26
+
+### Fixed
+
+- Build the Swift bridge with the default SwiftPM build engine and use its reported product directory.
+
 ## [0.1.0] - 2026-10-24
 
 ### Added
